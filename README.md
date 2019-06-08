@@ -1,29 +1,7 @@
 # initiative
 
-## Project setup
-```
-npm install
-```
+Dungeons & Dragons 5th Edition initiative tracker.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Basic idea here is the DM can set this up on an admin screen, with a second screen (an iPad in our case) showing the turn order, current turn, statuses etc.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Currently extremely basic as I came up with the idea the night before a session and hacked it all together instead of doing actual prep.
