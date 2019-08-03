@@ -8,18 +8,12 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class TestEvent implements ShouldBroadcast
 {
-
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return \Illuminate\Broadcasting\Channel|\Illuminate\Broadcasting\Channel[]
-     */
-    public function broadcastOn()
+    public function broadcastOn(): Channel
     {
         return new Channel('test');
     }
 
-    public function broadcastWith()
+    public function broadcastWith(): array
     {
         return ['data' => 'loadofshite'];
     }
