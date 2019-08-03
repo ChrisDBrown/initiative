@@ -1,4 +1,4 @@
-.PHONY: all tests static
+.PHONY: all tests static mess standards
 default: all;
 
 tests:
@@ -7,4 +7,10 @@ tests:
 static:
 	vendor/bin/phpstan analyse app
 
-all: tests static
+mess:
+	vendor/bin/phpmd app text phpmd.xml
+
+standards:
+	vendor/bin/phpcs --standard=ruleset.xml app/ -s
+
+all: tests static mess standards
