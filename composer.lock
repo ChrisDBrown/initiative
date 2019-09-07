@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f504b60dfc26640f875e11e0cb054ca3",
+    "content-hash": "03e11598d33da05416ff53cb1743aba3",
     "packages": [
         {
             "name": "beyondcode/laravel-websockets",
@@ -962,59 +962,6 @@
                 "laravel"
             ],
             "time": "2019-09-05T20:31:10+00:00"
-        },
-        {
-            "name": "laravel/helpers",
-            "version": "v1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/helpers.git",
-                "reference": "b8eae9ddd461e89d0296f74fd069c413bf83b6fa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/helpers/zipball/b8eae9ddd461e89d0296f74fd069c413bf83b6fa",
-                "reference": "b8eae9ddd461e89d0296f74fd069c413bf83b6fa",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.8.0|^6.0",
-                "php": ">=7.1.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                },
-                {
-                    "name": "Dries Vints",
-                    "email": "dries.vints@gmail.com"
-                }
-            ],
-            "description": "Provides backwards compatibility for helpers in the latest Laravel release.",
-            "keywords": [
-                "helpers",
-                "laravel"
-            ],
-            "time": "2019-07-30T15:25:31+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -5463,16 +5410,16 @@
         },
         {
             "name": "nunomaduro/larastan",
-            "version": "v0.3.21",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/larastan.git",
-                "reference": "4dca6af24373eb83aa7fcc1018495ef2680838c2"
+                "reference": "205986fa7c8c86c05e70b0324a64c722c95bd712"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/larastan/zipball/4dca6af24373eb83aa7fcc1018495ef2680838c2",
-                "reference": "4dca6af24373eb83aa7fcc1018495ef2680838c2",
+                "url": "https://api.github.com/repos/nunomaduro/larastan/zipball/205986fa7c8c86c05e70b0324a64c722c95bd712",
+                "reference": "205986fa7c8c86c05e70b0324a64c722c95bd712",
                 "shasum": ""
             },
             "require": {
@@ -5484,13 +5431,16 @@
                 "illuminate/pipeline": "5.6.*|5.7.*|5.8.*|^6.0",
                 "illuminate/support": "5.6.*|5.7.*|5.8.*|^6.0",
                 "mockery/mockery": "^1.0|0.9.*",
-                "orchestra/testbench": "^3.6",
                 "php": "^7.1.3",
                 "phpstan/phpstan": "^0.11.15",
                 "symfony/process": "^4.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.3"
+                "orchestra/testbench": "^3.8",
+                "phpunit/phpunit": "^7.3 || ^8.2"
+            },
+            "suggest": {
+                "orchestra/testbench": "^3.6"
             },
             "type": "library",
             "extra": {
@@ -5526,7 +5476,7 @@
                 "php",
                 "static analysis"
             ],
-            "time": "2019-08-18T21:52:50+00:00"
+            "time": "2019-08-28T08:22:36+00:00"
         },
         {
             "name": "ocramius/package-versions",
@@ -5578,121 +5528,6 @@
             ],
             "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
             "time": "2019-07-17T15:49:50+00:00"
-        },
-        {
-            "name": "orchestra/testbench",
-            "version": "v3.9.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/orchestral/testbench.git",
-                "reference": "62af00a2d39132a062c9011206c1b69ba1bfcc5f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/62af00a2d39132a062c9011206c1b69ba1bfcc5f",
-                "reference": "62af00a2d39132a062c9011206c1b69ba1bfcc5f",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^6.0",
-                "mockery/mockery": "^1.0",
-                "orchestra/testbench-core": "^3.9.0",
-                "php": ">=7.2",
-                "phpunit/phpunit": "^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.9-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mior Muhammad Zaki",
-                    "email": "crynobone@gmail.com",
-                    "homepage": "https://github.com/crynobone"
-                }
-            ],
-            "description": "Laravel Testing Helper for Packages Development",
-            "homepage": "http://orchestraplatform.com/docs/latest/components/testbench/",
-            "keywords": [
-                "BDD",
-                "TDD",
-                "laravel",
-                "orchestra-platform",
-                "orchestral",
-                "testing"
-            ],
-            "time": "2019-09-03T19:58:40+00:00"
-        },
-        {
-            "name": "orchestra/testbench-core",
-            "version": "v3.9.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "3c34a651dbf7b37ff67d672a007f1852792d3db2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/3c34a651dbf7b37ff67d672a007f1852792d3db2",
-                "reference": "3c34a651dbf7b37ff67d672a007f1852792d3db2",
-                "shasum": ""
-            },
-            "require": {
-                "fzaninotto/faker": "^1.4",
-                "php": ">=7.2"
-            },
-            "require-dev": {
-                "laravel/framework": "^6.0",
-                "laravel/laravel": "dev-master",
-                "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^8.0"
-            },
-            "suggest": {
-                "laravel/framework": "Required for testing (^6.0).",
-                "mockery/mockery": "Allow to use Mockery for testing (^1.0).",
-                "orchestra/testbench-browser-kit": "Allow to use legacy Laravel BrowserKit for testing (^3.9).",
-                "orchestra/testbench-dusk": "Allow to use Laravel Dusk for testing (^3.9).",
-                "phpunit/phpunit": "Allow to use PHPUnit for testing (^8.0)."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.9-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Orchestra\\Testbench\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mior Muhammad Zaki",
-                    "email": "crynobone@gmail.com",
-                    "homepage": "https://github.com/crynobone"
-                }
-            ],
-            "description": "Testing Helper for Laravel Development",
-            "homepage": "http://orchestraplatform.com/docs/latest/components/testbench/",
-            "keywords": [
-                "BDD",
-                "TDD",
-                "laravel",
-                "orchestra-platform",
-                "orchestral",
-                "testing"
-            ],
-            "time": "2019-09-03T19:54:36+00:00"
         },
         {
             "name": "pdepend/pdepend",
