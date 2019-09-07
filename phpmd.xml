@@ -29,7 +29,7 @@
     </rule>
     <rule ref="rulesets/codesize.xml/ExcessivePublicCount">
         <properties>
-            <property name="minimum" value="5"/>
+            <property name="minimum" value="10"/>
         </properties>
     </rule>
     <rule ref="rulesets/codesize.xml/TooManyFields">

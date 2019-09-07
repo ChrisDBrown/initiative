@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     public function __construct()
     {
@@ -17,8 +17,8 @@ class HomeController extends Controller
     {
         /** @var \App\User $user */
         $user = Auth::user();
-        $games = $user->games;
+        $games = $user->games()::limit(3)->get();
 
-        return view('home', ['games' => $games]);
+        return view('admin.dashboard', ['games' => $games]);
     }
 }

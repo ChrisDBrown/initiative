@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Your Games</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,11 +14,15 @@
                         </div>
                     @endif
 
-                    <ul>
-                    @foreach ($games as $game)
-                        <li>{{ $game->name }}</li>
-                    @endforeach
-                    </ul>
+                    @if (count($games) > 0)
+                        <ul>
+                            @foreach ($games as $game)
+                                <li>{{ $game->name }}</li>
+                            @endforeach
+                        </ul>
+                    @else
+                        You don't have any games yet!
+                    @endif
                 </div>
             </div>
         </div>
