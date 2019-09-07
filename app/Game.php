@@ -13,7 +13,14 @@ class Game extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'url_code', 'state',
+        'name', 'url_code',
+    ];
+
+    /**
+     * @var array
+     */
+    protected $attributes = [
+        'state' => 'NEW',
     ];
 
     public function user(): HasOne

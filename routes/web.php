@@ -13,11 +13,12 @@
 
 Auth::routes();
 
-Route::get('/home', 'AdminController@index')->name('admin_dashboard');
+Route::get('/home', 'Admin\DashboardController@view')->name('admin_dashboard');
 
-Route::get('/game/new', 'AdminGameController@create')->name('admin_game_create');
+Route::get('/game/new', 'Admin\GameController@create')->name('admin_game_create');
+Route::post('/game/new', 'Admin\GameController@store')->name('admin_game_store');
 
-Route::get('/game/{game}', 'AdminGameController@view')->name('admin_game_view');
+Route::get('/game/{game}', 'Admin\GameController@view')->name('admin_game_view');
 
 Route::get('/', function() {
     return view('welcome');

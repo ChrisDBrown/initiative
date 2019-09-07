@@ -17,12 +17,14 @@
                     @if (count($games) > 0)
                         <ul>
                             @foreach ($games as $game)
-                                <li>{{ $game->name }}</li>
+                                <li><a href="{{ route('admin_game_view', ['game' => $game])}}">{{ $game->name }}</a></li>
                             @endforeach
                         </ul>
                     @else
                         You don't have any games yet!
                     @endif
+
+                    <a href="{{ route('admin_game_create') }}" class="btn btn-info" role="button">Create a new game</a>
                 </div>
             </div>
         </div>
