@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin;
 use App\Game;
 use App\Http\Controllers\Controller;
 use App\Jobs\CreateGame;
+use App\Services\GameStateService;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
@@ -14,9 +15,15 @@ use Illuminate\Support\Facades\Auth;
 
 class GameController extends Controller
 {
-    public function __construct()
+    /**
+     * @var GameStateService
+     */
+    private $gameStateService;
+
+    public function __construct(GameStateService $gameStateService)
     {
         $this->middleware('auth');
+        $this->gameStateService = $gameStateService;
     }
 
     public function view(Game $game): Renderable
@@ -24,6 +31,15 @@ class GameController extends Controller
         $this->authorize('view', $game);
 
         return view('admin.game.view', ['game' => $game]);
+    }
+
+    public function nextState(Game $game): RedirectResponse
+    {
+        $this->authorize('view', $game);
+
+        $this->gameStateService->forwardGameState($game);
+
+        return redirect()->route('admin_game_view', ['game' => $game->id]);
     }
 
     public function create(): Renderable
@@ -49,6 +65,6 @@ class GameController extends Controller
 
         $gameId = CreateGame::dispatchNow($request->name, $user->id);
 
-        return redirect() -> route('admin_game_view', ['game' => $gameId]);
+        return redirect()->route('admin_game_view', ['game' => $gameId]);
     }
 }

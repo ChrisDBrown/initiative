@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Services\GameStateService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -20,7 +21,7 @@ class Game extends Model
      * @var array
      */
     protected $attributes = [
-        'state' => 'NEW',
+        'state' => GameStateService::STATE_ORDER[0],
     ];
 
     public function user(): HasOne

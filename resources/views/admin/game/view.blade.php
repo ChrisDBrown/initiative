@@ -14,7 +14,18 @@
                             </div>
                         @endif
 
-                        {{ $game->name }}
+                        {{ $game->name }}<br>
+                        {{ $game->state }}
+                        {!! Form::open(['action' => ['Admin\GameController@nextState', $game->id]]) !!}
+                        <fieldset>
+                            {!! Form::token() !!}
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    {!! Form::submit('Next State', ['class' => 'btn btn-lg btn-info pull-right'] ) !!}
+                                </div>
+                            </div>
+                        </fieldset>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
