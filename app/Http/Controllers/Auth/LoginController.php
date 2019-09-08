@@ -21,13 +21,13 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function redirectTo(): string
+    {
+        return route('admin_dashboard');
     }
 }
