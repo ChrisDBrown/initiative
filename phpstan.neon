@@ -4,4 +4,4 @@ includes:
 parameters:
     level: max
     ignoreErrors:
-        - '#Dynamic call to static method Illuminate\\Foundation\\Application::isLocal#'
+        - '#Dynamic call to static method Illuminate\\#'

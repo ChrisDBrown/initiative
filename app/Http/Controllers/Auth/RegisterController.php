@@ -25,11 +25,6 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    /**
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
     public function __construct()
     {
         $this->middleware('guest');
@@ -51,5 +46,10 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    protected function redirectTo(): string
+    {
+        return route('admin_dashboard');
     }
 }
