@@ -6,7 +6,7 @@
                     <div class="card-header">Game Component</div>
 
                     <div class="card-body">
-                        You're a game.
+                        {{ state }}
                     </div>
                 </div>
             </div>
@@ -16,8 +16,25 @@
 
 <script>
     export default {
+        props: {
+            url: String
+        },
+        data() {
+            return {
+                state: null,
+                loading: true
+            }
+        },
         mounted() {
-            console.log('Component mounted.')
+            axios
+                .get(`/api/${this.url}`)
+                .then(response => {
+                    this.state = response.data;
+                    Echo.channel(`Game.${this.url}`)
+                        .listen('.game.state_updated', (e) => {
+                            this.state = e;
+                        });
+                });
         }
     }
 </script>

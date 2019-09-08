@@ -21,11 +21,16 @@ class GameStateUpdateEvent implements ShouldBroadcast
 
     public function broadcastOn(): Channel
     {
-        return new Channel(sprintf('game_%s', $this->game->url_code));
+        return new Channel(sprintf('Game.%s', $this->game->url_code));
+    }
+
+    public function broadcastAs(): string
+    {
+        return 'game.state_updated';
     }
 
     public function broadcastWith(): array
     {
-        return ['state' => $this->game->state];
+        return $this->game->toArray();
     }
 }

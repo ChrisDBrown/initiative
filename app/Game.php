@@ -24,6 +24,13 @@ class Game extends Model
         'state' => GameStateService::STATE_ORDER[0],
     ];
 
+    /**
+     * @var array
+     */
+    protected $visible = [
+        'name', 'url_code', 'state', 'created_at', 'updated_at',
+    ];
+
     public function user(): HasOne
     {
         return $this->hasOne(User::class);

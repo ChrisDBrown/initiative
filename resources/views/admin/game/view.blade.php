@@ -15,7 +15,8 @@
                         @endif
 
                         {{ $game->name }}<br>
-                        {{ $game->state }}
+                        {{ $game->state }}<br>
+                        Public url: <a href="{{ route('game_view', ['url_code' => $game->url_code]) }}">{{ route('game_view', ['url_code' => $game->url_code]) }}</a>
                         {!! Form::open(['action' => ['Admin\GameController@nextState', $game->id]]) !!}
                         <fieldset>
                             {!! Form::token() !!}

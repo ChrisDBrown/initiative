@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="container">
-        <game></game>
+        <game url="{{ $game->url_code }}"></game>
     </div>
 @endsection

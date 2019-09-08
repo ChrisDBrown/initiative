@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Game;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\JsonResponse;
 
 class GameController extends Controller
 {
@@ -13,5 +14,12 @@ class GameController extends Controller
         $game = Game::where(['url_code' => $urlCode])->firstOrFail();
 
         return view('game.view', ['game' => $game]);
+    }
+
+    public function apiView(string $urlCode): JsonResponse
+    {
+        $game = Game::where(['url_code' => $urlCode])->firstOrFail();
+
+        return response()->json($game);
     }
 }
